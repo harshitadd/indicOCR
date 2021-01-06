@@ -7,10 +7,11 @@ lid = 'hin' #CHANGE THIS
 file = '/home/harshita/Desktop/COI_Out/out' +lid+'.txt'
 base = open(file,'r')
 content = base.read()
-patterns= [r"( \.)+",'-+','%','[A-Z]+','[a-z]+',' \* ','\d{1}\.\d{1}','#','\d{1}','(\d{2}#)', '(\d{3}#)', '(\d{2}.)', '(\d{3}.)', '\d{2}', '\d{3}', '\.\.+', '\[','\]','\[\]' ] #CHANGE THIS IF THE LANGUAGE USES . as delimeter
+patterns= ['( . .)+','-+','%','[A-Z]+','[a-z]+',' \* ','\d{1}\.\d{1}','#','\d{1}','(\d{2}#)', '(\d{3}#)', '(\d{2}.)', '(\d{3}.)', '\d{2}', '\d{3}', '\.\.+', '\[','\]','\[\]' ] #CHANGE THIS IF THE LANGUAGE USES . as delimeter
 for pattern in patterns:
 	content = re.sub(pattern,'',content)
-content = content.replace('\n',' ')
+content = re.sub('  +','',content)
+content = content.replace('\n','')
 sentences = sentence_tokenize.sentence_split(content, lang='hi') # CHANGE THIS
 final = ''
 for s in sentences:
