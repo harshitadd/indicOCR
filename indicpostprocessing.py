@@ -7,7 +7,7 @@ lid = 'hin' #CHANGE THIS
 file = '/home/harshita/Desktop/COI_Out/out' +lid+'.txt'
 base = open(file,'r')
 content = base.read()
-patterns= ['-+','%','[A-Z]+','[a-z]+',' \* ','\d{1}\.\d{1}','#','\d{1}','(\d{2}#)', '(\d{3}#)', '(\d{2}.)', '(\d{3}.)', '\d{2}', '\d{3}', '\.\.+']
+patterns= ['\.\s\s\.','-+','%','[A-Z]+','[a-z]+',' \* ','\d{1}\.\d{1}','#','\d{1}','(\d{2}#)', '(\d{3}#)', '(\d{2}.)', '(\d{3}.)', '\d{2}', '\d{3}', '\.\.+', '\[','\]','\[\]' ]
 for pattern in patterns:
 	content = re.sub(pattern,'',content)
 content = content.replace('\n',' ')
