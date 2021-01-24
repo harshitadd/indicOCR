@@ -24,7 +24,7 @@ import os
 
 def make_monolang(lid, s_path, d_path):
 	PDF_file = s_path
-	pages = convert_from_path(PDF_file, 250) 
+	pages = convert_from_path(PDF_file, 400) 
 	image_counter = 1
 	skipped = 0
 	for page in pages: 
@@ -48,8 +48,9 @@ def make_monolang(lid, s_path, d_path):
 
 
 
+
 if __name__=='__main__':
-	lid_t = 'asm' #replace the language identifier ( name, string ) as required by inltk
-	s_path = "/home/harshita/Desktop/COI-ASSAMESE-251-284.pdf" #replace with file path
+	lid_t = 'tam' #replace the language identifier ( name, string ) as required by inltk
+	s_path = "/home/harshita/Desktop/COI_TAMIL-281-297.pdf" #replace with file path
 	d_path = "/home/harshita/Desktop/"
 	make_monolang(lid_t, s_path, d_path)
