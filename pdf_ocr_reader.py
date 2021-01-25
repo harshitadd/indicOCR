@@ -21,7 +21,7 @@ import os
 # Assamese (asm)
 # English (eng) ** Done 
 # Urdu (urd) ** Dropped 
-
+no = '1'
 def make_monolang(lid, s_path, d_path):
 	PDF_file = s_path
 	pages = convert_from_path(PDF_file, 400) 
@@ -33,7 +33,7 @@ def make_monolang(lid, s_path, d_path):
 		image_counter = image_counter + 1
 	filelimit = image_counter-1
 	print('Images converted')
-	outfile = d_path + 'out' + lid + '.txt'
+	outfile = d_path + 'out' + lid + no +'.txt'
 	f = open(outfile, "a") 
 	for i in range(1, filelimit + 1):
 		print(i) 
@@ -50,7 +50,7 @@ def make_monolang(lid, s_path, d_path):
 
 
 if __name__=='__main__':
-	lid_t = 'tam' #replace the language identifier ( name, string ) as required by inltk
-	s_path = "/home/harshita/Desktop/COI_TAMIL-281-297.pdf" #replace with file path
+	lid_t = 'mal' #replace the language identifier ( name, string ) as required by inltk
+	s_path = "/home/harshita/Desktop/MA 1979-05_0.pdf" #replace with file path
 	d_path = "/home/harshita/Desktop/"
 	make_monolang(lid_t, s_path, d_path)
