@@ -1,4 +1,6 @@
 import re
+actno_year = []
+lid = []
 lang_ids = {'Assamese', 'Bengali', 'Gujarati', 'Kannada', 'Malayalam', 'Marathi', 'Odia', 'Punjabi', 'Tamil', 'Telugu'}
 for lang in lang_ids:  
 	filename = '/home/harshita/AI4BharatTranslation/links/' + lang + '_links.txt'
@@ -18,6 +20,9 @@ for lang in lang_ids:
 				link = link.replace(' of ','-')
 				link = link.replace('pt 1','_0')
 				link = link.replace('pt 2','_1')
+				year = re.findall('(\d{4})', link)
+				actno = re.findall('\d{2}',link)
+				
 				print(link[46:])
 
 	except: 
