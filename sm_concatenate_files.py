@@ -21,8 +21,8 @@ for month in months:
       with open(input_path) as f:
         try: 
           data = json.load(f)
-          sentences.append('\n'.join(data['sentences']))
-          file_input_name = '/home/harshitadd/dated_sentences/gu/'+ day + '_' + month + '_' + year + '_sentences.txt' 
+          sentences.extend(data['sentences'])
+          file_input_name = '/home/harshitadd/dated_sentences/en/'+ day + '_' + month + '_' + year + '.txt' 
           with open(file_input_name,'a') as file:
               file.write('\n'.join(sentences)) 
         except:
