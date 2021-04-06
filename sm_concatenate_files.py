@@ -9,7 +9,7 @@
 
 import json
 import os 
-year = '2019' 
+year = '2014' 
 months = os.listdir('/home/harshitadd/en_darts/' + year)
 for month in months:
   days = os.listdir('/home/harshitadd/en_darts/' + year + '/' + month + '/')
@@ -22,7 +22,7 @@ for month in months:
         try: 
           data = json.load(f)
           sentences.extend(data['sentences'])
-          file_input_name = '/home/harshitadd/dated_sentences/en/'+ day + '_' + month + '_' + year + '.txt' 
+          file_input_name = '/home/harshitadd/dated_sentences/en/'+ year + '/' + month + '_' + day + '_' + year + '.txt' 
           with open(file_input_name,'a') as file:
               file.write('\n'.join(sentences)) 
         except:
